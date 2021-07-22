@@ -1,0 +1,14 @@
+
+django-ckeditor
+django-cors-headers
+django-easy-select2
+django-extensions
+django-jazzmin
+django-js-asset
+django-ninja
+django-silk
+pillow
+typing-extensions
+pydantic[email]
+pretty-errors
+python-jose
