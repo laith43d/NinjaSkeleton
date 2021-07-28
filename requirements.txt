@@ -1,4 +1,4 @@
-
+django~=3.2.5
 django-ckeditor
 django-cors-headers
 django-easy-select2
@@ -12,3 +12,5 @@ typing-extensions
 pydantic[email]
 pretty-errors
 python-jose
+
+cryptography
