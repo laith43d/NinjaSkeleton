@@ -2,11 +2,11 @@ from ninja import Schema
 from pydantic import EmailStr
 
 
-class AuthIn(Schema):
+class PasswordlessAuthIn(Schema):
     phone_number: str
 
 
-class AuthConfirmationIn(Schema):
+class PasswordlessAuthConfirmationIn(Schema):
     phone_number: str
     verification_code: str
 
@@ -22,7 +22,7 @@ class PasswordlessUpdateIn(Schema):
     name: str = None
 
 
-class AuthMessageOut(Schema):
+class PasswordlessAuthMessageOut(Schema):
     status: str
     message: str
     token: str = None

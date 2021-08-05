@@ -9,8 +9,9 @@ django-ninja
 django-silk
 pillow
 typing-extensions
-pydantic[email]
+pydantic[email]~=1.8.2
 pretty-errors
 python-jose
 
-cryptography
+cryptography~=3.4.7
+twilio~=6.62.1
