@@ -40,7 +40,7 @@ def custom_key_generator(instance, size=6):
     return new_key
 
 
-def paginated_response(queryset, per_page=10, page=1):
+def paginated_response(queryset, *, per_page=10, page=1):
     try:
         total_count = len(queryset)
     except TypeError:
@@ -67,7 +67,7 @@ def paginated_response(queryset, per_page=10, page=1):
     }
 
 
-def response(status, data, paginated: bool = False, per_page: int = 10, page: int = 1):
+def response(status, data, *, paginated: bool = False, per_page: int = 10, page: int = 1):
     if paginated:
         return status, paginated_response(data, per_page, page)
 

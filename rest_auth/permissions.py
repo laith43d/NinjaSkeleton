@@ -6,7 +6,7 @@ from django.http import HttpRequest
 from jose import jwt, JWTError
 from ninja.security import HttpBearer
 
-from rest_auth.models import PasswordlessAccount, EmailAccount
+from rest_auth.models import EmailAccount
 
 TIME_DELTA = datetime.timedelta(days=30)
 
@@ -24,17 +24,6 @@ def encode_token(user, user_type: str = 'PU'):
                       key=settings.SECRET_KEY,
                       algorithm='HS256')
 
-
-class PasswordlessAuthorization(HttpBearer):
-    def authenticate(self, request: HttpRequest, token: str) -> Optional[Any]:
-        try:
-            user_pk = decode_token(token)
-        except JWTError as e:
-            return e
-
-        user = PasswordlessAccount.objects.get(phone_number=user_pk['user'])
-        if user:
-            return {'user': user, 'token': token}
 
 
 class EmailAuthorization(HttpBearer):
