@@ -16,7 +16,7 @@ def create_random_encryption_key() -> bytes:
 ALLOWED_INT = '0123456789'
 
 
-def random_string_generator(size=10, chars=ALLOWED_INT):
+def random_string_generator(size=10, chars=ALLOWED_INT) -> str:
     """
     Description:Generate random values based on the size and chars passed.\n
     """

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'django_extensions',
     'silk',
+    'ratelimit',
 
     'rest_auth',
 ]
@@ -149,3 +150,5 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 # Use as your requirements
 AUTH_USER_MODEL = 'rest_auth.EmailAccount'
+
+ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 60 * 24

@@ -2,7 +2,7 @@ from django.contrib.auth.models import UserManager, AbstractUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from config.utils.common_models import Entity
+from config.utils.models import Entity
 
 
 class EmailAccountManager(UserManager):

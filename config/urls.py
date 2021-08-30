@@ -35,3 +35,8 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += [path('silk/', include('silk.urls', namespace='silk'))]
+
+
+# TODO revise the authorization permissions
+# TODO finalize the auth process
+# TODO finish a basic crud operations
