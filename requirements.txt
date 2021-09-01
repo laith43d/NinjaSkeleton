@@ -5,6 +5,7 @@ cffi==1.14.6
 charset-normalizer==2.0.4
 colorama==0.4.4
 cryptography==3.4.8
+dj-config-url==0.1.1
 Django==3.2.6
 django-ckeditor==6.1.0
 django-cors-headers==3.8.0
@@ -32,6 +33,7 @@ pydantic==1.8.2
 Pygments==2.10.0
 PyJWT==1.7.1
 python-dateutil==2.8.2
+python-decouple==3.4
 python-jose==3.3.0
 pytz==2021.1
 requests==2.26.0
