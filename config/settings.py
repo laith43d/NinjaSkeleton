@@ -56,12 +56,12 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
     'silk.middleware.SilkyMiddleware',
 ]
 
@@ -146,7 +146,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # SILKY_AUTHENTICATION = True  # User must login
 # SILKY_AUTHORISATION = True  # User must have permissions
+# SILKY_ANALYZE_QUERIES = True
+# SILKY_META = True
+
+SILKY_PYTHON_PROFILER = True
+SILKY_PYTHON_PROFILER_BINARY = True
 SILKY_ANALYZE_QUERIES = True
+SILKY_PYTHON_PROFILER_RESULT_PATH = 'profile/'
 
 CORS_ALLOW_ALL_ORIGINS = True
 
@@ -154,3 +160,26 @@ CORS_ALLOW_ALL_ORIGINS = True
 AUTH_USER_MODEL = 'rest_auth.EmailAccount'
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 60 * 24
+
+
+# LOGGING = {
+#     'version': 1,
+#     'formatters': {
+#         'mosayc': {
+#             'format': '%(asctime)-15s %(levelname)-7s %(message)s [%(funcName)s (%(filename)s:%(lineno)s)]',
+#         }
+#     },
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#             'formatter': 'mosayc'
+#         }
+#     },
+#     'loggers': {
+#         'silk': {
+#             'handlers': ['console'],
+#             'level': 'DEBUG'
+#         }
+#     },
+# }
