@@ -13,7 +13,7 @@ django-easy-select2==1.5.7
 django-extensions==3.1.3
 django-jazzmin==2.4.8
 django-js-asset==1.2.2
-django-ninja==0.14.0
+django-ninja==0.16.1
 django-ratelimit==3.0.1
 django-silk @ git+https://github.com/jazzband/django-silk@21a4058c2a758fac687f837cb523175c64c567c3
 djangorestframework==3.12.4
