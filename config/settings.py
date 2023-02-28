@@ -12,10 +12,10 @@ pretty_errors.configure(
     display_link=True,
     lines_before=5,
     lines_after=2,
-    line_color=pretty_errors.RED + '> ' + pretty_errors.default_config.line_color,
-    code_color='  ' + pretty_errors.default_config.line_color,
+    line_color=f'{pretty_errors.RED}> {pretty_errors.default_config.line_color}',
+    code_color=f'  {pretty_errors.default_config.line_color}',
     truncate_code=True,
-    display_locals=True
+    display_locals=True,
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

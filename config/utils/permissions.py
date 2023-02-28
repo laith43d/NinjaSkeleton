@@ -18,7 +18,7 @@ def create_access_token(*, data: dict, expires_delta: timedelta = None):
         expire = datetime.utcnow() + expires_delta
     else:
         expire = datetime.utcnow() + timedelta(minutes=15)
-    to_encode.update({"exp": expire, "sub": access_token_jwt_subject})
+    to_encode |= {"exp": expire, "sub": access_token_jwt_subject}
     return jwt.encode(to_encode, settings.SECRET_KEY, algorithm=ALGORITHM)
 
 
@@ -50,6 +50,5 @@ def get_current_user(token: str):
 
 class AuthBearer(HttpBearer):
     def authenticate(self, request, token: str) -> get_user_model:
-        user = get_current_user(token)
-        if user:
+        if user := get_current_user(token):
             return user

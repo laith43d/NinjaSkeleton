@@ -153,9 +153,7 @@ class SignalsModel(SerializerModel):
             self.id is None,
             force_insert is True
         )
-        context = {'is_creation': any(creation_conditions)}
-        context.update(kwargs)
-        return context
+        return {'is_creation': any(creation_conditions)} | kwargs
 
     def trigger_event(self, event_name, context):
         for attribute in dir(self):

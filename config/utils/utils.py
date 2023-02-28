@@ -35,9 +35,7 @@ def custom_key_generator(instance, size=6):
     # get the class from the instance
     Klass = instance.__class__
 
-    # qs_exists = Klass.objects.filter(key=new_key).exclude(is_active=True).exists()
-    qs_exists = Klass.objects.filter(key=new_key).exists()
-    if qs_exists:
+    if qs_exists := Klass.objects.filter(key=new_key).exists():
         return custom_key_generator(size=size)
 
     return new_key
@@ -49,7 +47,7 @@ def generate_random_code(length=10):
 
 
 def generate_md5_hashcode(key_word):
-    keyword = '{}-{}'.format(key_word, time.time())
+    keyword = f'{key_word}-{time.time()}'
     return hashlib.md5(keyword.encode('utf-8')).hexdigest()
 
 
